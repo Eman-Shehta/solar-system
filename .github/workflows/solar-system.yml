@@ -12,9 +12,9 @@ env:
 jobs:
   unit-testing:
     name: unit-testing
-    strategy:
-        matrix: 
-            version: [18, 19, 20]
+    #strategy:
+        #matrix: 
+            #version: [18, 19, 20]
             #os: ubuntu-latest
             #exclude:
                 #- version: 18
@@ -26,7 +26,8 @@ jobs:
       - name: setup nodejs version 18
         uses: actions/setup-node@v4
         with:
-            node-version: ${{ matrix.version }}
+            #node-version: ${{ matrix.version }}
+            node-version: 18
       - name: install dependencies
         run: npm install
       - name: unit testing
