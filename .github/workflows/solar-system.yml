@@ -28,6 +28,11 @@ jobs:
         with:
             #node-version: ${{ matrix.version }}
             node-version: 18
+      - name: cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}--node_modules-${{ hashFiles('package.lock.json')}}  
       - name: install dependencies
         run: npm install
       - name: unit testing
@@ -48,6 +53,11 @@ jobs:
         with:
             
             node-version: 18
+      - name: cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}--node_modules-${{ hashFiles('package.lock.json')}}      
       - name: install dependencies
         run: npm install
       - name: check code coverage
