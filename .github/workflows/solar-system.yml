@@ -5,6 +5,9 @@ on:
      branches:
        - 'main'
        - 'feature/*'
+   pull_request: 
+    branches: 
+        - 'main'    
 env:
     MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
     MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
