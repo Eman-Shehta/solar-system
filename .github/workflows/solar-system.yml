@@ -1,0 +1,14 @@
+name: solar system
+on: pull_request
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        node-version: '18'
+        steps:
+            - name: checkout code, install dependency, npm test
+              run: |
+                actions/checkout@v4
+            - 
+
+
+   
