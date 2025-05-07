@@ -143,6 +143,7 @@ jobs:
          kubeconfig: ${{ secrets.KUBECONFIG }}
             
       - name: fetch cluster details
+      
         run: |
           kubectl version --short
           echo -------------
