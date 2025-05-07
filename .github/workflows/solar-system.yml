@@ -136,6 +136,12 @@ jobs:
         uses: azure/setup-kubectl@v4
         with:
           version: 'v1.26.0'
+      - name: set kubeconfig file
+        uses: azure/k8s-set-context@v4
+        with:
+         method: kubeconfig
+         kubeconfig: ${{ secrets.KUBECONFIG}}
+            
       - name: fetch cluster details
         run: |
           kubectl version --short
