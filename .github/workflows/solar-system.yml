@@ -141,6 +141,7 @@ jobs:
 
         with:
          method: kubeconfig
+         
          kubeconfig: ${{ secrets.KUBECONFIG }}
             
       - name: fetch cluster details
