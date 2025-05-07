@@ -18,7 +18,7 @@ jobs:
     name: unit-testing
     services:
       mongo-db:
-        image: docker pull siddhart67/mongo-db
+        image: docker pull mongo-latest
         ports:
           - 27017:27017
     env:
