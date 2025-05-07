@@ -90,7 +90,7 @@ jobs:
           uses: docker/login-action@v3
   
           with:
-            registry: ghcri.io
+            registry: ghcr.io
             username: ${{ github.repository_owner }}
             password: ${{ secrets.GITHUB_TOKEN }}  
         - name: docker build for testing
