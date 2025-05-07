@@ -76,6 +76,8 @@ jobs:
   docker:
      name: contranization
      needs: [unit-testing, code-coverage]
+     permissions: 
+      packages: write
      runs-on: ubuntu-latest
      steps:
         - name: checkout repo
