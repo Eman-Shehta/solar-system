@@ -16,13 +16,16 @@ env:
 jobs:
   unit-testing:
     name: unit-testing
-    #strategy:
-        #matrix: 
-            #version: [18, 19, 20]
-            #os: ubuntu-latest
-            #exclude:
-                #- version: 18
-                  #os: macos-latest
+    services:
+      mongo-db:
+        image: siddhart67/mongo-db:non-prod
+        ports:
+          - 27017:27017
+    env:
+      MONGO_URI: 'mongodb+srv://localhost/superData'
+      MONGO_USERNAME: non-prod-user
+      MONGO_PASSWORD: non-prod-password  
+
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository
@@ -118,7 +121,7 @@ jobs:
           with:
             context: .
             push: true
-            
+
 
             tags: |
               ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
