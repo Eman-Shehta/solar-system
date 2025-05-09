@@ -145,12 +145,10 @@ jobs:
 
          kubeconfig: ${{ secrets.KUBECONFIG }}
             
-     # - name: fetch cluster details
+      - name: fetch cluster details
 
-      #  run: |
-
-         
-        #  echo -------------
-       #   kubectl get nodes                  
+        run: |
+         echo -------------
+         kubectl get nodes                  
 
    
